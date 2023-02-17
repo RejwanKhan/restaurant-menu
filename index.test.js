@@ -27,7 +27,8 @@ describe("testing the functionality and relations of ResturantsAndMenus", () => 
   it("can create a new Menu instance", async () => {
     await Menus.create({ title: "Wines" });
 
-    const menu1 = Menus.findOne({ where: { title: "Wines" } });
-    expect(menu1.name).toEqual("Wines");
+    const menu1 = await Menus.findOne({ where: { title: "Wines" } });
+
+    expect(menu1.title).toEqual("Wines");
   });
 });
