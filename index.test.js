@@ -70,4 +70,18 @@ describe("testing the functionality and relations of ResturantsAndMenus", () => 
     const fastFood = await Menus.findOne({ where: { title: "FastFood" } });
     expect(fastFood).toBeFalsy();
   });
+
+  it("test restaurant has rating Property", async () => {
+    await Restaurants.bulkCreate([
+      { name: "Pizza Hut", location: "London", cuisine: "Italian", rating: 5 },
+      {
+        name: "FishAndChips",
+        location: "London",
+        cuisine: "British",
+        rating: 7,
+      },
+    ]);
+    const FishAndChips = await Restaurants.findByPk(2);
+    expect(FishAndChips.rating).toEqual(7);
+  });
 });

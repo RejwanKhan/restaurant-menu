@@ -7,6 +7,7 @@ const Restaurants = sequelize.define("restaurants", {
   name: DataTypes.STRING,
   location: DataTypes.STRING,
   cuisine: DataTypes.STRING,
+  rating: DataTypes.NUMBER,
 });
 
 module.exports = { Restaurants };
