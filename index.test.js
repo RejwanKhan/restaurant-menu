@@ -11,7 +11,7 @@ afterEach(async () => {
 });
 
 describe("testing the functionality and relations of ResturantsAndMenus", () => {
-  it("testing creating a new Resturant ", async () => {
+  it("testing creating a new Resturant instance ", async () => {
     await Restaurants.create({
       name: "BurgerKing",
       location: "NewYork",
@@ -22,5 +22,12 @@ describe("testing the functionality and relations of ResturantsAndMenus", () => 
       where: { name: "BurgerKing" },
     });
     expect(BurgerKing.name).toBe("BurgerKing");
+  });
+
+  it("can create a new Menu instance", async () => {
+    await Menus.create({ title: "Wines" });
+
+    const menu1 = Menus.findOne({ where: { title: "Wines" } });
+    expect(menu1.name).toEqual("Wines");
   });
 });
