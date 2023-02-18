@@ -28,11 +28,11 @@ beforeEach(async () => {
 
   //Bulk Create Menus
   await Menus.bulkCreate([
-    { title: "New York Classic Burger" },
-    { title: "Fillet O' Fish Burger" },
-    { title: "Chicken Curry" },
-    { title: "Meat Curry" },
-    { title: "McPlant" },
+    { title: "Brunch" },
+    { title: "Starters" },
+    { title: "Main" },
+    { title: "Deserts" },
+    { title: "Drink" },
   ]);
 });
 
