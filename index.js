@@ -3,6 +3,7 @@ const { Restaurants } = require("./models/Restaurant");
 const { Menus } = require("./models/Menus");
 const { Items } = require("./models/Items");
 const { Courses } = require("./models/Courses");
+
 //One to Many relationship
 
 Restaurants.hasMany(Menus);
@@ -109,6 +110,15 @@ const main = async () => {
   await Main.addItems(4);
   await Drinks.addItems(2);
   await Deserts.addItems(6);
+
+  //EAGAR LOADING BETWEEN MENU AND ITEM
+
+  const allMenus = await Menus.findAll({ include: [{ model: Items }] });
+  console.log(JSON.stringify(allMenus, null, 2));
+  console.log("12312321321321");
+
+  const firstMenu = await Menus.findByPk(1, { include: [{ model: Items }] });
+  console.log(JSON.stringify(firstMenu.Items[0].name, null, 2));
 };
 
 main();
