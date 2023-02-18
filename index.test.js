@@ -1,7 +1,6 @@
 const { sequelize } = require("./src/connection");
 const { Restaurants } = require("./models/Restaurant");
 const { Menus } = require("./models/Menus");
-const { where } = require("sequelize");
 
 beforeAll(async () => {
   await sequelize.sync({ force: true });
