@@ -110,4 +110,18 @@ describe("testing Many to Many associations", () => {
       course6.dataValues.MenuId === 4 && course6.dataValues.ItemId === 6
     ).toBeTruthy();
   });
+  it("can create test item", async () => {
+    const newItem = await Items.create({
+      name: "Fish and Chips",
+      image: "Picture of Fish and Chips",
+      price: 6,
+      vegetarian: false,
+    });
+
+    console.log(newItem);
+    expect(newItem.dataValues.name).toEqual("Fish and Chips");
+    expect(newItem.dataValues.image).toEqual("Picture of Fish and Chips");
+    expect(newItem.dataValues.price).toEqual(6);
+    expect(newItem.dataValues.vegetarian).toBeFalsy();
+  });
 });
