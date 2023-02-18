@@ -73,19 +73,19 @@ const main = async () => {
     {
       name: "New York Meat Burger",
       image: "An Image of a CheeseBurger",
-      price: 5,
+      price: 5.5,
       vegetarian: false,
     },
     {
       name: "Chicken Curry",
       image: "An Image of Chicken Curry",
-      price: 8,
+      price: 8.5,
       vegetarian: false,
     },
     {
       name: "French Toast",
       image: "An Image of French Toast",
-      price: 4,
+      price: 4.2,
       vegetarian: false,
     },
     {
